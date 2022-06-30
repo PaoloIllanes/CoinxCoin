@@ -48,9 +48,6 @@ function App() {
     }
 
     const getUserBalance = async () => {
-        // @ts-ignore
-        const Web3 = window.web3;
-        const accounts = await Web3.eth.getAccounts()
        const usrBalance= await contractDeployed.methods.balanceAccount(address).call()
         setUserBalance(usrBalance)
 
