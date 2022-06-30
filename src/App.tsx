@@ -97,17 +97,17 @@ function App() {
 
     return (
         <div className="App">
-            <button onClick={() => connectWallet()} className="btn btn-success">Connect</button>
+
             <div>
-                <h1>Comprar tokens</h1>
+                <h1>Buy CoinxCoin</h1>
                 <label>
-                    Dirección de destino
+                    Destination Adress
                     <input id='addressField' type="text" value={address} onChange={ (event) => { setAddress(event.target.value) } } />
                 </label>
             </div>
             <div>
                 <label>
-                    Cantidad de tokens a comprar (1 token = 1 ether)
+                    Tokens Quantity (1 token = 1 ether)
                     <input id='quantityField' type="number" value={quantity} onChange={ (event) => { setQuantity(event.target.value) } } />
                 </label>
             </div>
@@ -117,34 +117,38 @@ function App() {
                     <input id='quantityField' type="text" value={value} onChange={ (event) => { setValue(event.target.value) } } />
                 </label>
             </div>
-            <button onClick={() => buy()} className="btn btn-success">Comprar tokens</button>
+            <button onClick={() => buy()} className="btn btn-info">Buy</button>
+            <p>CONTRACT Address: {contractAddress}</p>
 
+
+            <button onClick={getBalance} className="btn btn-info">Contract Balance</button>
+            <p>CONTRACT BALANCE: {balance}</p>
             <div>
                 <h1>Get User Balance</h1>
                 <label>
-                    Dirección del usuario
+                    User Address
                     <input id='addressField' type="text" value={address} onChange={ (event) => { setAddress(event.target.value) } } />
                 </label>
-                <button onClick={() => getUserBalance()} className="btn btn-success">Get Balance</button>
+                <button onClick={() => getUserBalance()} className="btn btn-info">User Balance</button>
                 <p>User BALANCE: {userBalance}</p>
             </div>
-            <button onClick={getBalance}>Contract Balance</button>
-            <p>CONTRACT BALANCE: {balance}</p>
-            <p>CONTRACT Address: {contractAddress}</p>
 
             <div>
-                <h1>Añadir nuevos tokens</h1>
+                <h1>Create new Tokens</h1>
                 <input id='addressField' type="number" value={quantity} onChange={ (event) => { setQuantity(event.target.value) } } />
-                <button onClick={increment}>Add tokens</button>
+                <button onClick={increment} className="btn btn-info">Create tokens</button>
             </div>
-            <p>TOKEN BALANCE: {tokens}</p>
+            <p>TOKEN BALANCE: {tokens} </p>
             <div>
-                <h1>Token Price</h1>
+                <h1>Tokens Price</h1>
                 <input id='addressField' type="number" value={quantity} onChange={ (event) => { setQuantity(event.target.value) } } />
-                <button onClick={getTokenPrice}>Get Price</button>
+                <button onClick={getTokenPrice} className="btn btn-info">Get price</button>
                 <p>Token price: {tokenprice}</p>
             </div>
+            <button onClick={() => connectWallet()} className="btn btn-info">Connect Metamask Wallet</button>
         </div>
+
+
 
     );
 }
