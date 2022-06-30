@@ -30,7 +30,7 @@ function App() {
         // @ts-ignore
         const Web3 = window.web3;
         const abi = contractLottery.abi;
-        const contractDeployed = new Web3.eth.Contract(abi, '0x582c5592e44775209ad4529479c0e0e66c576e2b');
+        const contractDeployed = new Web3.eth.Contract(abi, '0x1bF6947F9837d4E1307D820F4b4B47d1275425c5');
         setContract(contractDeployed);
 
 
@@ -118,6 +118,7 @@ function App() {
                 </label>
             </div>
             <button onClick={() => buy()} className="btn btn-info">Buy</button>
+            <p>Rinkeby TestNet</p>
             <p>CONTRACT Address: {contractAddress}</p>
 
 
